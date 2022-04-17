@@ -7,11 +7,8 @@ public class Main {
     private static final String PATH = "D://Alexey/JavaCore/Games/savegames";
 
     public static void main(String[] args) {
-        openZip(PATH + "/savegame.zip", PATH);
 
-        System.out.println(openProgress(PATH + "/" + "savegame1.dat"));
-        System.out.println(openProgress(PATH + "/" + "savegame2.dat"));
-        System.out.println(openProgress(PATH + "/" + "savegame3.dat"));
+        openZip(PATH + "/savegame.zip", PATH);
     }
 
     private static void openZip(String pathZip, String path) {
@@ -27,6 +24,7 @@ public class Main {
                 fout.flush();
                 zin.closeEntry();
                 fout.close();
+                System.out.println(openProgress(PATH + "/" + name));
             }
         } catch (IOException e) {
             e.printStackTrace();
